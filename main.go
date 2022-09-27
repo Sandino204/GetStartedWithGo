@@ -1,18 +1,11 @@
 package main
 
-import "fmt"
+import (
+	"net/http"
+	"project/controllers"
+)
 
 func main() {
-	var i int 
-	i = 42
-
-	fmt.Println(i)
-
-	var f float32 = 3.14
-
-	fmt.Println(f)
-
-	j := "teste"
-
-	fmt.Println(j)
+	controllers.RegisterControllers()
+	http.ListenAndServe(":3000", nil)
 }
